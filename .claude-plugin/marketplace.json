@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "paper2tldr",
+  "description": "Turn an academic PDF into a one-page TLDR review.",
+  "owner": {
+    "name": "DeArchiTech"
+  },
+  "plugins": [
+    {
+      "name": "paper2tldr",
+      "description": "Read a whole academic paper and produce a single-page PDF review: TLDR/80-20 verdict, 3-4 key points, then an honest AI's Take.",
+      "author": {
+        "name": "DeArchiTech"
+      },
+      "category": "productivity",
+      "source": "./plugins/paper2tldr",
+      "homepage": "https://github.com/DeArchiTech/paper2tldr"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.pdf
+!plugins/paper2tldr/skills/paper2tldr/assets/*.pdf
+.DS_Store

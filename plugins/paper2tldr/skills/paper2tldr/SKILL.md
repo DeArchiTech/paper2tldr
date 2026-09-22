@@ -31,6 +31,31 @@ Read it in chunks with `sed -n 'A,Bp'`. Cover abstract → model/method → expe
 their comparison actually shows, and any contradiction between the abstract and the model.
 Those are usually the most valuable lines in the report.
 
+### Step 1b — Over 30 pages? Treat it as a book, and find the chapter
+
+Anything longer than ~30 pages is not a paper — it is a thesis, a volume, or a whole
+proceedings, and reviewing all of it is the wrong job.
+
+```bash
+pdfinfo "<paper>.pdf" | grep Pages
+```
+
+If it is over 30 pages:
+
+1. **Read the first two pages.** A download cover sheet (ResearchGate, a publisher stamp) usually
+   names the single chapter the file was fetched for. That chapter is the paper.
+2. **Otherwise find the contents** — `grep -n "Contents" paper.txt` — and take the chapter's start
+   page plus the *next* entry's start page. That is the range.
+3. **Map pages to lines.** The chapter title appears twice: once in the contents, once at its own
+   opening. `grep -n "<chapter title>" paper.txt` gives both; read from the second hit down to the
+   next chapter heading or the chapter's own `References`.
+4. **A thesis with no cover sheet is different** — there the whole document *is* the paper. Read it
+   all, but lead with the chapters that carry the result, not the literature review.
+5. **If nothing points at one chapter, ask which one** rather than reviewing the whole volume.
+
+The citation line then names the chapter, with the volume as the venue:
+`Review of <author>, <chapter title> (<volume>, <publisher/series>, <year>, <chapter> pp.)`
+
 ### Step 2 — Write the markdown, three sections only
 
 ```

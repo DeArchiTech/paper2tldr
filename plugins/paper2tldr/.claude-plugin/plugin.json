@@ -1,7 +1,7 @@
 {
   "name": "paper2tldr",
   "description": "Read a whole academic paper and produce a single-page PDF review: TLDR/80-20 verdict, 3-4 key points, then an honest AI's Take. Use when someone hands over a paper PDF and asks for the 80/20, a one-pager, a review, or a summary.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "DeArchiTech"
   },

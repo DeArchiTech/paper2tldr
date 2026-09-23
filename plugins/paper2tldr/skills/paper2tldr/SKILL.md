@@ -1,6 +1,6 @@
 ---
 name: paper2tldr
-description: Turn a PDF paper into a 1-page PDF review — TLDR/80-20, 3-4 key points, then AI's Take. Trigger when the user gives a paper PDF and asks for the 80/20, a one-pager, a review, or "summarize this paper". Do NOT deploy or publish anything.
+description: Turn a PDF paper into a 1-page PDF review — TLDR/80-20, short numbered key points, then AI's Take — all point form. Trigger when the user gives a paper PDF and asks for the 80/20, a one-pager, a review, or "summarize this paper". Do NOT deploy or publish anything.
 ---
 
 # Paper → 1-Page TLDR
@@ -65,8 +65,8 @@ The citation line then names the chapter, with the volume as the venue:
 <i><full title></i> (<venue>, <date>, <n> pp.)</p>
 
 ## TLDR / 80-20      → ONE boxed claim: what is worth keeping from this paper
-## The Keys          → 3-4 numbered points, bold claim + 2-4 sentences each
-## AI's Take         → 2-3 short paragraphs (see below)
+## The Keys          → numbered points, bold claim + evidence, 20-30 words each
+## AI's Take         → points, same 20-30 word budget (see below)
 ```
 
 The style block:
@@ -99,8 +99,30 @@ The principle worth keeping, in plain words.
 | Section | Job | Budget |
 |---|---|---|
 | TLDR / 80-20 | The single transferable idea. Not a summary — a verdict. | ~40 words |
-| The Keys | The problem · the central mechanism · how it is scored/measured · what the experiment showed, including its failures. Real numbers, not adjectives. | ~90 words each |
-| AI's Take | ¶1 how strong the evidence actually is. ¶2 where it sits among things the reader already knows. ¶3 one line they can use in their own work. | ~150 words total |
+| The Keys | The problem · the central mechanism · how it is scored/measured · what the experiment showed, including its failures. Real numbers, not adjectives. | **20-30 words per point** |
+| AI's Take | How strong the evidence actually is · where it sits among things the reader already knows · one line they can use in their own work. | **20-30 words per point** |
+
+**Everything is point form, including AI's Take.** Each point is a bold lead-in claim followed by
+its evidence, 20-30 words total. Never a paragraph, never a single line — a point under ~18 words
+cannot carry a finding, and one over ~32 is a paragraph wearing a bullet.
+
+**More points beats longer points.** A 1-page report runs roughly 12 Keys and 5 Take points. Past
+about 12 points, group them under short bold subheads (*What it claims* · *How it was tested* ·
+*Where it breaks*) so the page still scans. Audit before building: strip the markdown, count the
+words in every `- ` line, and flag anything outside 18-32.
+
+### Longer variants
+
+The same grammar scales. Only the point count changes — never the point length.
+
+| Source | Pages |
+|---|---|
+| One paper, one video | 1 |
+| One book | 2.5 |
+| A comparison of two sources | 2 |
+
+Bullets render ~420 words per page against ~520 for prose, so word targets do not transfer between
+the two. Fit by cutting whole points.
 
 **Voice:** plain words, short sentences, no hedging, no praise for its own sake. Say the paper is
 weak when it is weak. Numbers from the paper go in as numbers.
